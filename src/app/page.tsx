@@ -1,5 +1,11 @@
-export default function Home() {
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: 'Chats'
+}
+
+export default function HomePage() {
   return (
-    <main></main>
+    <div>Home Page</div>
   );
 }
