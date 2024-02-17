@@ -26,8 +26,12 @@ const menuIcons = [
 	},
 ];
 
+const isLogin = false;
+
 export const Sidebar = () => {
 	const pathName = usePathname();
+
+	if(!isLogin) return null;
 	
 	return (
 		<aside className={styles.sidebar}>
