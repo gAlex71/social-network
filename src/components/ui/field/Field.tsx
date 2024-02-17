@@ -8,7 +8,7 @@ const Field = forwardRef<HTMLInputElement, IField>((
     ref) => {
 
 	return (
-        <div className={cn(styles.field, className)} style={style}>
+        <label className={cn(styles.field, className)} style={style}>
             {Icon && (
                 <div className={styles.icon}>
                     <Icon />
@@ -18,7 +18,7 @@ const Field = forwardRef<HTMLInputElement, IField>((
             <input ref={ref} {...rest} />
 
             {error && <div className={styles.error}>{error.message}</div>}
-        </div>
+        </label>
     );
 });
 
