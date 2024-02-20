@@ -1,25 +1,27 @@
 import { IChat } from '@/types/chat.types';
 import { IUser } from '@/types/user.types';
 import Image from 'next/image';
+import dayjs from 'dayjs';
+import Link from 'next/link';
 
-export const ChatListItem = ({ participants, messages }: IChat) => {
+export const ChatListItem = ({ participants, messages, id }: IChat) => {
 	//Авторизовавшийся пользователь
-	const authUserEmail: IUser['name'] = 'emailAuth@mail.ru';
+	const authUserEmail: IUser['name'] = 'Alex';
 
 	const companion = participants.find((user) => user !== authUserEmail);
 	const lastMessage = messages.at(-1);
 
 	return (
-		<div className="p-layout flex items-center">
+		<Link href={`/chat/${id}`} className="p-layout flex items-center border-b border-border duration-300 ease-linear transition-colors hover:bg-border">
 			<Image src={''} alt="" width={45} height={45} className="mr-5" />
 
-			<div className="text-sm">
-				<div>
+			<div className="text-sm w-full">
+				<div className="flex items-center justify-between">
                     <span>{companion}</span>
-                    <span>{lastMessage?.createdAt}</span>
+                    <span className='text-xs opacity-30'>{dayjs(lastMessage?.createdAt).format('HH:mm')}</span>
                 </div>
 				<div className="opacity-30">{lastMessage?.text}</div>
 			</div>
-		</div>
+		</Link>
 	);
 };
