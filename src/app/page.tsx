@@ -1,6 +1,6 @@
 import { Metadata } from "next"
-import { Chat } from "@/components/screens/chats/Chat";
-import { ChatsList } from "@/components/screens/chats/ChatsList";
+import { Chat } from "@/components/screens/chats/chat/Chat";
+import { ChatsList } from "@/components/screens/chats/list/ChatsList";
 import { CurrentUser } from "@/components/screens/chats/CurrentUser";
 
 export const metadata: Metadata = {

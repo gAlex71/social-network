@@ -1,5 +1,5 @@
 .field {
-    @apply flex items-center mb-10;
+    @apply flex items-center;
 
     >input {
         @apply w-full border-none outline-none bg-transparent placeholder:text-[#585654] transition-colors duration-300 ease-linear;

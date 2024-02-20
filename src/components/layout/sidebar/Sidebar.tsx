@@ -26,7 +26,7 @@ const menuIcons = [
 	},
 ];
 
-const isLogin = false;
+const isLogin = true;
 
 export const Sidebar = () => {
 	const pathName = usePathname();
