@@ -14,3 +14,22 @@ html, body {
 h1 {
     @apply text-4xl font-bold;
 }
+
+input:-webkit-autofill {
+    transition-delay: 9999s;
+    transition-property: background-color;
+}
+
+.animation-slide-fade {
+    animation: slideFade 0.4s;
+}
+
+@keyframes slideFade {
+    0% {
+        transform: translateY(-22px);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
