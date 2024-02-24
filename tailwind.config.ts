@@ -16,6 +16,12 @@ const config: Config = {
         border: 'rgba(255, 255, 255, .12)',
         primary: '#8A2BE2'
       },
+      transitionDuration: {
+        DEFAULT: '400ms'
+      },
+      transitionTimingFunction: {
+        DEFAULT: 'ease-linear'
+      }
     },
   },
   plugins: [],
