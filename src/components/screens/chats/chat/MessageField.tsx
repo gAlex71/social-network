@@ -1,18 +1,26 @@
 'use client'
 
 import Field from "@/components/ui/field/Field";
+// import useReactQuerySubscription from "@/hooks/useReactQuerySubscription";
 import { ArrowRightToLine, Send } from "lucide-react";
+// import { useParams } from "next/navigation";
 import { useState } from "react";
 
-interface IMessageField {
-    sendMessage: (message: string) => Promise<void>
-}
-
-export default function MessageField ({sendMessage}: IMessageField) {
+export default function MessageField () {
     const [message, setMessage] = useState('');
 
+    // const send = useReactQuerySubscription();
+    // const { id } = useParams();
+
     const onSubmit = () => {
-        message && sendMessage(message);
+        if(!message) return;
+
+        console.log(message);
+        // send({
+        //     operation: 'invalidate',
+        //     entity: 'chat',
+        //     id: id.toString(),
+        // })
     };
 
     return (
@@ -22,6 +30,9 @@ export default function MessageField ({sendMessage}: IMessageField) {
             Icon={ArrowRightToLine} 
             value={message} 
             onChange={e => setMessage(e.target.value)}
+            onKeyDown={e => {
+                if(e.key === 'Enter') onSubmit()
+            }}
         />
 
         <button 

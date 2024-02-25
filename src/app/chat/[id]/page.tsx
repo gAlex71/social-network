@@ -8,10 +8,10 @@ export const metadata: Metadata = {
     ...NO_INDEX_PAGE
 }
 
-export default function ChatPage() {
+export default function ChatPage({ id }: { id: string }) {
     return (
         <ChatsScreen>
-            <Chat />
+            <Chat id={id} />
         </ChatsScreen>
     )
 }

@@ -8,10 +8,12 @@ export function Message({ message }: { message: IMessage }) {
     return (
         <div className={`flex ${isSender ? 'justify-end' : 'justify-start'} mb-2.5`}>
             <div className={`relative flex items-center ${isSender ? 'flex-row-reverse': ''}`}>
-                <Image src='' alt='avatar' className="rounded-full" width={45} height={45} />
+                <Image src={'/avatar.jpg'} alt='avatar' className="rounded-full" width={45} height={45} />
 
-                <div className={`bg-gray-200 p-2 rounded-lg ${isSender ? 'mr-3' : 'ml-3' }`}>
-                    <p className="text-sm text-gray-800">{message.text}</p>
+                <div className={`p-2 rounded-lg ${isSender ? 'mr-3 rounded-tr-none bg-primary' : 'ml-3 rounded-tl-none bg-border' }`}>
+                    <p className="text-sm text-white">
+                        {message.text}
+                    </p>
                     <span className="text-xs text-gray-500 block mt-1">
                         {dayjs(`2022-01-01T${message.createdAt}:00Z`).format('HH:mm')}
                     </span>
